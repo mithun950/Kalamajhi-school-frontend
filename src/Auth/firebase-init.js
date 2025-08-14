@@ -1,24 +1,20 @@
-// Import the functions you need from the SDKs you need
+// firebase.config.js
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Firebase config from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyBufNmHHqbnMQiqexvEqsgmO3rJOD2jM6Q",
-  authDomain: "kalamajhi-high-school.firebaseapp.com",
-  projectId: "kalamajhi-high-school",
-  storageBucket: "kalamajhi-high-school.firebasestorage.app",
-  messagingSenderId: "255710259304",
-  appId: "1:255710259304:web:1af7a819c5cf9e7223b3dd",
-  measurementId: "G-H6BFX0T1EN"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
 export default auth;
