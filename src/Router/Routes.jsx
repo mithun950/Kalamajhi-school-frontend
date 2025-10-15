@@ -11,6 +11,7 @@ import NoticeBoardTable from "../Pages/NoticeBoard/Noticeboard";
 import Teachers from "../Pages/Teachers/Teachers";
 
 
+
 import AdminHome from "../DashBoard/DashboardContent/AdminHome";
 import ManageTeachers from "../DashBoard/DashboardContent/ManageTeachers";
 import ManageStudents from "../DashBoard/DashboardContent/ManageStudents";
@@ -22,6 +23,14 @@ import MyProfile from "../DashBoard/DashboardContent/MyProfile";
 import Dashboard from "../DashBoard/DashBorad";
 import ManageMarquee from "../DashBoard/DashboardContent/ManageMarquee";
 import ManageTestimonials from "../DashBoard/DashboardContent/ManageTestimonials";
+import ManageOpinions from "../DashBoard/DashboardContent/ManageOpinions";
+import ClassRoutine from "../DashBoard/DashboardContent/ManageRoutine";
+import Routines from "../Pages/ClassRoutine/Routines";
+import AdmissionForm from "../Pages/AddmissionForm/AdmisionForm";
+import ManageAdmission from "../DashBoard/DashboardContent/ManageAdmission";
+import MyResult from "../Layout/StudentResult/MyResult";
+import ManageResults from "../DashBoard/DashboardContent/ManageResults";
+import StudentList from "../Layout/Students/StudentsList";
 
 
 const router = createBrowserRouter([
@@ -32,6 +41,10 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "notices", element: <NoticeBoardTable /> },
       { path: "teachers", element: <Teachers /> },
+      { path: "routines", element: <Routines></Routines> },
+      { path: "admissions", element: <AdmissionForm></AdmissionForm>},
+      {path: "results",element:<MyResult></MyResult>},
+      {path: "students",element:<StudentList></StudentList>},
       // Dashboard as nested route
       {
     path: "/dashboard",
@@ -45,6 +58,10 @@ const router = createBrowserRouter([
       { path: "manageNotices", element: <ManageNotices /> },
       { path: "manageMarquee", element: <ManageMarquee /> },
       { path: "manageTestimonials", element: <ManageTestimonials /> },
+      { path: "manageOpinions", element: <ManageOpinions /> },
+      { path: "manageRoutines", element: <ClassRoutine></ClassRoutine> },
+      { path: "manageAdmission", element: <ManageAdmission></ManageAdmission> },
+      { path: "manageResults", element: <ManageResults></ManageResults> },
 
       // User routes
       { path: "userHome", element: <UserHome /> },

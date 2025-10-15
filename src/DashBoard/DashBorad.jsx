@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { NavLink, Outlet, Navigate } from "react-router-dom";
 import {
-  FaHome,
-  FaChalkboardTeacher,
+
+
   FaUsers,
   FaBook,
   FaClipboardList,
   FaUserCircle,
   FaChild,
+  FaOpera,
+  FaHome,
 } from "react-icons/fa";
+import { GiTeacher } from "react-icons/gi";
+import { FaUsersGear } from "react-icons/fa6";
 import { TbMarquee } from "react-icons/tb";
 import { IoClose } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -49,8 +53,8 @@ const Dashboard = () => {
             <>
               <li>
                 <NavLink to="/dashboard/adminHome" className={linkClass}>
-                  <FaHome size={20} />
-                  {isMenuOpen && <span>Admin Home</span>}
+                 <FaUsersGear size={20} />
+                  {isMenuOpen && <span>Manage Users</span>}
                   {!isMenuOpen && (
                     <span className="absolute left-full ml-2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100">
                       Admin Home
@@ -60,7 +64,7 @@ const Dashboard = () => {
               </li>
               <li>
                 <NavLink to="/dashboard/manageTeachers" className={linkClass}>
-                  <FaChalkboardTeacher size={20} />
+                  <GiTeacher size={20} />
                   {isMenuOpen && <span>Manage Teachers</span>}
                 </NavLink>
               </li>
@@ -71,9 +75,15 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboard/manageClasses" className={linkClass}>
+                <NavLink to="/dashboard/manageRoutines" className={linkClass}>
                   <FaBook size={20} />
-                  {isMenuOpen && <span>Manage Classes</span>}
+                  {isMenuOpen && <span>Manage Routines</span>}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageResults" className={linkClass}>
+                  <FaBook size={20} />
+                  {isMenuOpen && <span>Manage Result</span>}
                 </NavLink>
               </li>
               <li>
@@ -94,6 +104,19 @@ const Dashboard = () => {
                   {isMenuOpen && <span>Manage Testimonials</span>}
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/dashboard/manageOpinions" className={linkClass}>
+                 <FaOpera size={20} />
+                  {isMenuOpen && <span>Manage Opinions</span>}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/dashboard/manageAdmission" className={linkClass}>
+                 <FaOpera size={20} />
+                  {isMenuOpen && <span>Manage Admission</span>}
+                </NavLink>
+              </li>
+             
             </>
           ) : (
             <>
@@ -127,15 +150,15 @@ const Dashboard = () => {
             <>
               <li className="group relative" title="Admin Home">
                 <NavLink to="/dashboard/adminHome" className={linkClass}>
-                  <FaHome size={20} />
+                   <FaUsersGear size={20} />
                   <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
-                    Admin Home
+                    Manage Users
                   </span>
                 </NavLink>
               </li>
               <li className="group relative" title="Manage Teachers">
                 <NavLink to="/dashboard/manageTeachers" className={linkClass}>
-                  <FaChalkboardTeacher size={20} />
+                  <GiTeacher size={20} />
                   <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
                     Manage Teachers
                   </span>
@@ -150,10 +173,10 @@ const Dashboard = () => {
                 </NavLink>
               </li>
               <li className="group relative" title="Manage Classes">
-                <NavLink to="/dashboard/manageClasses" className={linkClass}>
+                <NavLink to="/dashboard/manageRoutines" className={linkClass}>
                   <FaBook size={20} />
                   <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
-                    Manage Classes
+                    Manage Routine
                   </span>
                 </NavLink>
               </li>
@@ -178,6 +201,22 @@ const Dashboard = () => {
                   <FaChild size={20} />
                   <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
                    Manage Testimonials
+                  </span>
+                </NavLink>
+              </li>
+              <li className="group relative" title="Manage Testimonials">
+                <NavLink to="/dashboard/manageOpinions" className={linkClass}>
+                 <FaOpera size={20} />
+                  <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
+                   Manage Opinions
+                  </span>
+                </NavLink>
+              </li>
+              <li className="group relative" title="Manage Admission">
+                <NavLink to="/dashboard/manageAdmission" className={linkClass}>
+                 <FaOpera size={20} />
+                  <span className="absolute left-10 top-1/2 -translate-y-1/2 bg-black text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 whitespace-nowrap">
+                   Manage Admission
                   </span>
                 </NavLink>
               </li>

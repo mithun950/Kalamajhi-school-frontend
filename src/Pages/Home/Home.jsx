@@ -3,6 +3,7 @@ import Banner from '../Banner';
 import LatestNotices from './LeatestNotice';
 import FacilitiesSection from './FacilitiesSection';
 import Testimonials from './Testimonials';
+import OpinionSection from './Opinions';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
             <LatestNotices></LatestNotices>
             <FacilitiesSection></FacilitiesSection>
             <Testimonials></Testimonials>
+            <OpinionSection></OpinionSection>
         </div>
     );
 };
