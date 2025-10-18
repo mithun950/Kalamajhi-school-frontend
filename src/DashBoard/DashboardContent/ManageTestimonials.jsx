@@ -14,7 +14,7 @@ const ManageTestimonials = () => {
   // GET all testimonials
   const fetchTestimonials = () => {
     axios
-      .get("http://localhost:5000/api/testimonials")
+      .get("https://kalamajhi-high-school-backend.vercel.app/api/testimonials")
       .then((res) => setTestimonials(res.data))
       .catch((err) => console.error(err));
   };
@@ -34,7 +34,7 @@ const ManageTestimonials = () => {
     if (editingId) {
       axios
         .put(
-          `http://localhost:5000/api/testimonials/${editingId}`,
+          `https://kalamajhi-high-school-backend.vercel.app/api/testimonials/${editingId}`,
           formData
         )
         .then(() => {
@@ -50,7 +50,7 @@ const ManageTestimonials = () => {
         .catch((err) => console.error(err));
     } else {
       axios
-        .post("http://localhost:5000/api/testimonials", formData)
+        .post("https://kalamajhi-high-school-backend.vercel.app/api/testimonials", formData)
         .then(() => {
           fetchTestimonials();
           setFormData({
@@ -68,7 +68,7 @@ const ManageTestimonials = () => {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this testimonial?")) {
       axios
-        .delete(`http://localhost:5000/api/testimonials/${id}`)
+        .delete(`https://kalamajhi-high-school-backend.vercel.app/api/testimonials/${id}`)
         .then(() => fetchTestimonials())
         .catch((err) => console.error(err));
     }

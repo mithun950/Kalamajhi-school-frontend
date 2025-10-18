@@ -6,24 +6,24 @@ export default function ManageAdmissions() {
   const [isOpen, setIsOpen] = useState(true);
 
   const fetchAdmissions = () => {
-    axios.get("http://localhost:5000/api/admissions")
+    axios.get("https://kalamajhi-high-school-backend.vercel.app/api/admissions")
       .then(res => setAdmissions(res.data));
-    axios.get("http://localhost:5000/api/admission-status")
+    axios.get("https://kalamajhi-high-school-backend.vercel.app/api/admission-status")
       .then(res => setIsOpen(res.data.isOpen));
   };
 
   useEffect(() => fetchAdmissions(), []);
 
   const confirmAdmission = (id) => {
-    axios.put(`http://localhost:5000/api/admissions/confirm/${id}`)
+    axios.put(`https://kalamajhi-high-school-backend.vercel.app/api/admissions/confirm/${id}`)
       .then(fetchAdmissions);
   };
 
-  const deleteAdmission = (id) => axios.delete(`http://localhost:5000/api/admissions/${id}`)
+  const deleteAdmission = (id) => axios.delete(`https://kalamajhi-high-school-backend.vercel.app/api/admissions/${id}`)
     .then(fetchAdmissions);
 
   const toggleAdmission = () => {
-    axios.put("http://localhost:5000/api/admission-status", { isOpen: !isOpen })
+    axios.put("https://kalamajhi-high-school-backend.vercel.app/api/admission-status", { isOpen: !isOpen })
       .then(fetchAdmissions);
   };
 

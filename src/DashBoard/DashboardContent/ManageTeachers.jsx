@@ -18,7 +18,7 @@ const ManageTeachers = () => {
   // Fetch teachers
   const fetchTeachers = () => {
     setLoading(true);
-    fetch("http://localhost:5000/api/teachers")
+    fetch("https://kalamajhi-high-school-backend.vercel.app/api/teachers")
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch teachers");
         return res.json();
@@ -61,8 +61,8 @@ const ManageTeachers = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = editingTeacher
-      ? `http://localhost:5000/api/teachers/${editingTeacher._id}`
-      : "http://localhost:5000/api/teachers";
+      ? `https://kalamajhi-high-school-backend.vercel.app/api/teachers/${editingTeacher._id}`
+      : "https://kalamajhi-high-school-backend.vercel.app/api/teachers";
     const method = editingTeacher ? "PUT" : "POST";
 
     try {
@@ -105,7 +105,7 @@ const ManageTeachers = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const res = await fetch(`http://localhost:5000/api/teachers/${id}`, {
+          const res = await fetch(`https://kalamajhi-high-school-backend.vercel.app/api/teachers/${id}`, {
             method: "DELETE",
           });
           if (!res.ok) {

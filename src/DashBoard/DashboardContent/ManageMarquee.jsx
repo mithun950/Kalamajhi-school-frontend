@@ -10,7 +10,7 @@ const ManageMarquee = () => {
 
   const fetchNotices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/marquees");
+      const res = await axios.get("https://kalamajhi-high-school-backend.vercel.app/api/marquees");
       setNotices(res.data);
       const active = res.data.find((n) => n.active);
       setActiveId(active?._id || null);
@@ -27,10 +27,10 @@ const ManageMarquee = () => {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/api/marquees/${editId}`, { text });
+        await axios.put(`https://kalamajhi-high-school-backend.vercel.app/api/marquees/${editId}`, { text });
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/api/marquees", { text, date: new Date(), active: false });
+        await axios.post("https://kalamajhi-high-school-backend.vercel.app/api/marquees", { text, date: new Date(), active: false });
       }
       setText("");
       fetchNotices();
@@ -46,7 +46,7 @@ const ManageMarquee = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/marquees/${id}`);
+      await axios.delete(`https://kalamajhi-high-school-backend.vercel.app/api/marquees/${id}`);
       fetchNotices();
     } catch (err) {
       console.error("Failed to delete marquee:", err);
@@ -55,7 +55,7 @@ const ManageMarquee = () => {
 
   const handleSetActive = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/marquees/setActive`, { id });
+      await axios.patch(`https://kalamajhi-high-school-backend.vercel.app/api/marquees/setActive`, { id });
       fetchNotices();
     } catch (err) {
       console.error("Failed to set active marquee:", err);

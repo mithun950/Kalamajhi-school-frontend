@@ -20,7 +20,7 @@ const ManageRoutine = () => {
   const fetchRoutines = useCallback(async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/routines/${className}/${section}`
+        `https://kalamajhi-high-school-backend.vercel.app/routines/${className}/${section}`
       );
       setRoutines(res.data);
       const uniquePeriods = [...new Set(res.data.map((r) => r.period))];
@@ -40,14 +40,14 @@ const ManageRoutine = () => {
     e.preventDefault();
     try {
       if (editId) {
-        await axios.put(`http://localhost:5000/routines/${editId}`, {
+        await axios.put(`https://kalamajhi-high-school-backend.vercel.app/routines/${editId}`, {
           ...form,
           class: className,
           section
         });
         setEditId(null);
       } else {
-        await axios.post("http://localhost:5000/routines", {
+        await axios.post("https://kalamajhi-high-school-backend.vercel.app/routines", {
           ...form,
           class: className,
           section
@@ -67,7 +67,7 @@ const ManageRoutine = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/routines/${id}`);
+      await axios.delete(`https://kalamajhi-high-school-backend.vercel.app/routines/${id}`);
       fetchRoutines();
     } catch (err) {
       console.error(err);

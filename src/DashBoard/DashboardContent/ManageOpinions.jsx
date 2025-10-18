@@ -7,7 +7,7 @@ const ManageOpinions = () => {
 
   // Load data
   useEffect(() => {
-    fetch("http://localhost:5000/api/opinions")
+    fetch("https://kalamajhi-high-school-backend.vercel.app/api/opinions")
       .then((res) => res.json())
       .then(setOpinions);
   }, []);
@@ -16,8 +16,8 @@ const ManageOpinions = () => {
     e.preventDefault();
     const method = editingId ? "PUT" : "POST";
     const url = editingId
-      ? `http://localhost:5000/api/opinions/${editingId}`
-      : "http://localhost:5000/api/opinions";
+      ? `https://kalamajhi-high-school-backend.vercel.app/api/opinions/${editingId}`
+      : "https://kalamajhi-high-school-backend.vercel.app/api/opinions";
 
     fetch(url, {
       method,
@@ -26,14 +26,14 @@ const ManageOpinions = () => {
     }).then(() => {
       setFormData({ name: "", designation: "", image: "", description: "" });
       setEditingId(null);
-      fetch("http://localhost:5000/api/opinions")
+      fetch("https://kalamajhi-high-school-backend.vercel.app/api/opinions")
         .then((res) => res.json())
         .then(setOpinions);
     });
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/api/opinions/${id}`, { method: "DELETE" }).then(() => {
+    fetch(`https://kalamajhi-high-school-backend.vercel.app/api/opinions/${id}`, { method: "DELETE" }).then(() => {
       setOpinions(opinions.filter((o) => o._id !== id));
     });
   };

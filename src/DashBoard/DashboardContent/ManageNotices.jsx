@@ -12,7 +12,7 @@ export default function ManageNotices() {
   // Fetch all notices
   const fetchNotices = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notices");
+      const res = await axios.get("https://kalamajhi-high-school-backend.vercel.app/api/notices");
       setNotices(res.data);
     } catch (err) {
       console.error("Failed to fetch notices:", err);
@@ -37,7 +37,7 @@ export default function ManageNotices() {
     }
 
     try {
-      await axios.post("http://localhost:5000/api/notices", {
+      await axios.post("https://kalamajhi-high-school-backend.vercel.app/api/notices", {
         title,
         fileContent,
         date,
@@ -63,7 +63,7 @@ export default function ManageNotices() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await axios.delete(`http://localhost:5000/api/notices/${id}`);
+          await axios.delete(`https://kalamajhi-high-school-backend.vercel.app/api/notices/${id}`);
           Swal.fire("Deleted!", "Notice has been deleted.", "success");
           fetchNotices();
         } catch (err) {
@@ -89,7 +89,7 @@ export default function ManageNotices() {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/notices/${selectedNotice._id}`,
+        `https://kalamajhi-high-school-backend.vercel.app/api/notices/${selectedNotice._id}`,
         {
           title,
           fileContent,

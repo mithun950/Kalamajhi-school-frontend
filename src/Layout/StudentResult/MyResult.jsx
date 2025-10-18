@@ -25,7 +25,7 @@ export default function MyResult() {
     setResults(null);
 
     try {
-      const res = await axios.get(`http://localhost:5000/api/students/class/${className}`);
+      const res = await axios.get(`https://kalamajhi-high-school-backend.vercel.app/api/students/class/${className}`);
       const s = res.data.find(st => st.roll === Number(roll));
 
       if (!s) {
@@ -35,7 +35,7 @@ export default function MyResult() {
       }
 
       setStudent(s);
-      const r = await axios.get(`http://localhost:5000/api/results/${s._id}`);
+      const r = await axios.get(`https://kalamajhi-high-school-backend.vercel.app/api/results/${s._id}`);
       if (!r.data) {
         setError("Result not found for this student");
       } else {

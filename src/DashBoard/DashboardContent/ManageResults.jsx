@@ -12,7 +12,7 @@ export default function ManageResult() {
   // Fetch students when class changes
   useEffect(() => {
     if (className) {
-      axios.get(`http://localhost:5000/api/students/class/${className}`)
+      axios.get(`https://kalamajhi-high-school-backend.vercel.app/api/students/class/${className}`)
         .then(res => setStudents(res.data));
     }
   }, [className]);
@@ -37,7 +37,7 @@ export default function ManageResult() {
       alert("Please select student and section");
       return;
     }
-    await axios.post("http://localhost:5000/api/results", {
+    await axios.post("https://kalamajhi-high-school-backend.vercel.app/api/results", {
       studentId: selectedStudent,
       className,
       roll: students.find(s => s._id === selectedStudent).roll,

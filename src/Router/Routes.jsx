@@ -31,6 +31,8 @@ import ManageAdmission from "../DashBoard/DashboardContent/ManageAdmission";
 import MyResult from "../Layout/StudentResult/MyResult";
 import ManageResults from "../DashBoard/DashboardContent/ManageResults";
 import StudentList from "../Layout/Students/StudentsList";
+import AboutUs from "../Layout/Aboutus/AboutUs";
+import ContactUs from "../Layout/ContuctUs/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,8 @@ const router = createBrowserRouter([
       { path: "admissions", element: <AdmissionForm></AdmissionForm>},
       {path: "results",element:<MyResult></MyResult>},
       {path: "students",element:<StudentList></StudentList>},
+      {path: "about",element:<AboutUs></AboutUs>},
+      {path: "contact",element:<ContactUs></ContactUs>},
       // Dashboard as nested route
       {
     path: "/dashboard",

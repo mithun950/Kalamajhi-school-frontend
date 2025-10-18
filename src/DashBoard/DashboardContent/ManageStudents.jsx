@@ -8,18 +8,18 @@ const ManageStudents = () => {
 
   const fetchStudents = async () => {
     if (!className) return;
-    const res = await axios.get(`http://localhost:5000/api/students/class/${className}`);
+    const res = await axios.get(`https://kalamajhi-high-school-backend.vercel.app/api/students/class/${className}`);
     setStudents(res.data);
   };
 
   const handleAdd = async () => {
-    await axios.post("http://localhost:5000/api/students", { ...form, className });
+    await axios.post("https://kalamajhi-high-school-backend.vercel.app/api/students", { ...form, className });
     setForm({ name: "", roll: "", section: "" });
     fetchStudents();
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/students/${id}`);
+    await axios.delete(`https://kalamajhi-high-school-backend.vercel.app/api/students/${id}`);
     fetchStudents();
   };
 

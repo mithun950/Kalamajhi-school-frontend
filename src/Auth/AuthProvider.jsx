@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
       const googleUser = result.user;
 
       // Send data to backend for saving in MongoDB
-      await fetch("http://localhost:5000/api/users", {
+      await fetch("https://kalamajhi-high-school-backend.vercel.app/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

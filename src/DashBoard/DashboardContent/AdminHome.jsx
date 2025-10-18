@@ -42,7 +42,7 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/api/users/${user._id}`)
+          .delete(`https://kalamajhi-high-school-backend.vercel.app/api/users/${user._id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               refetch();

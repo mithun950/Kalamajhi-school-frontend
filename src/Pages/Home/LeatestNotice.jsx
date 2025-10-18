@@ -8,7 +8,7 @@ const LatestNoticesWithImage = () => {
   const scrollIntervalRef = useRef(null);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/notices")
+    fetch("https://kalamajhi-high-school-backend.vercel.app/api/notices")
       .then((res) => res.json())
       .then((data) => setNotices(data))
       .catch((err) => console.error(err));
