@@ -33,6 +33,8 @@ import ManageResults from "../DashBoard/DashboardContent/ManageResults";
 import StudentList from "../Layout/Students/StudentsList";
 import AboutUs from "../Layout/Aboutus/AboutUs";
 import ContactUs from "../Layout/ContuctUs/ContactUs";
+import Gallery from "../Layout/Gallery/Gallery";
+import ManageGallery from "../DashBoard/DashboardContent/ManageGallery";
 
 
 const router = createBrowserRouter([
@@ -49,6 +51,7 @@ const router = createBrowserRouter([
       {path: "students",element:<StudentList></StudentList>},
       {path: "about",element:<AboutUs></AboutUs>},
       {path: "contact",element:<ContactUs></ContactUs>},
+      {path: "gallery",element:<Gallery></Gallery>},
       // Dashboard as nested route
       {
     path: "/dashboard",
@@ -66,6 +69,7 @@ const router = createBrowserRouter([
       { path: "manageRoutines", element: <ClassRoutine></ClassRoutine> },
       { path: "manageAdmission", element: <ManageAdmission></ManageAdmission> },
       { path: "manageResults", element: <ManageResults></ManageResults> },
+      { path: "manageGallery", element:<ManageGallery></ManageGallery>},
 
       // User routes
       { path: "userHome", element: <UserHome /> },

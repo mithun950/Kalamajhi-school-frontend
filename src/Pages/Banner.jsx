@@ -4,21 +4,21 @@ import { ChevronLeft, ChevronRight, Circle } from 'lucide-react';
 const slides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1600&q=80",
+    image: "/assets/11.jpg",
     title: "Explore the Mountains",
     description: "Discover beautiful mountain trails and adventures.",
     gradient: "from-purple-900/80 via-blue-900/60 to-transparent"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1600&q=80",
+    image: "/assets/10.jpg",
     title: "Relax at the Beach",
     description: "Feel the warm sun and calm sea breeze.",
     gradient: "from-orange-900/80 via-pink-900/60 to-transparent"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80",
+    image: "/assets/18.jpg",
     title: "City Lights & Nights",
     description: "Experience the vibrant life of the city after dark.",
     gradient: "from-indigo-900/80 via-purple-900/60 to-transparent"
